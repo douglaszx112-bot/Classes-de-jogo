@@ -1,0 +1,49 @@
+class Heroi {
+    // Construtor da classe para inicializar as propriedades do herói
+    constructor(nome, idade, tipo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.tipo = tipo;
+    }
+
+    // Função (método) que executa a ação de atacar
+    atacar() {
+        let ataque; // Variável para armazenar o tipo de ataque
+
+        // Estrutura de decisão para definir o ataque com base no tipo do herói
+        switch (this.tipo.toLowerCase()) {
+            case 'mago':
+                ataque = "magia";
+                break;
+            case 'guerreiro':
+                ataque = "espada";
+                break;
+            case 'monge':
+                ataque = "artes marciais";
+                break;
+            case 'ninja':
+                ataque = "shuriken";
+                break;
+            default:
+                ataque = "um ataque desconhecido";
+        }
+
+        // Exibe a mensagem final concatenando as propriedades e variáveis
+        console.log(`O ${this.tipo} atacou usando ${ataque}`);
+    }
+}
+
+// Criando instâncias (objetos) da classe Heroi
+let heroi1 = new Heroi("Arthur", 35, "guerreiro");
+let heroi2 = new Heroi("Gandalf", 2000, "mago");
+let heroi3 = new Heroi("Aang", 112, "monge");
+let heroi4 = new Heroi("Hanzo", 28, "ninja");
+
+// Criando um array (lista) com os heróis criados
+let listaDeHerois = [heroi1, heroi2, heroi3, heroi4];
+
+// Utilizando um laço de repetição para percorrer a lista e fazer todos atacarem
+for (let i = 0; i < listaDeHerois.length; i++) {
+    let heroiAtual = listaDeHerois[i];
+    heroiAtual.atacar();
+}
